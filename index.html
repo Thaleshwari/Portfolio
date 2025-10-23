@@ -9,6 +9,7 @@
    <script>
     emailjs.init("uAiF7pHQzgO8wOQsf"); // Your public key
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
   <!-- Navigation -->
@@ -33,30 +34,55 @@
 
   <!-- Hero Section -->
   <section id="hero">
-    <div class="hero-container">
-      <!-- Left: Text -->
-      <div class="hero-left">
-        <h2>Hello, I'm <span>Thaleshwari J</span></h2>
-        <p>Computer Science Engineering student and MERN Stack Developer. I build modern, responsive web apps with clean design and optimized functionality.</p>
-        <a href="#contact" class="btn" style="text-decoration: none;">Contact Me</a>
-      </div>
+  <div class="hero-content">
+    <h2>Hello, I'm <span class="highlight">Thaleshwari J</span></h2>
+    <h3 class="typing"></h3>
+    <p>
+     Computer Science Engineering student and MERN Stack Developer. I build modern, responsive web apps with clean design and optimized functionality.
+    </p>
 
-      <!-- Right: Photo -->
-      <div class="hero-right">
-        <div class="hero-photo">
-          <img src="c:/Users/DELL/Downloads/J.Thaleshwari.jpeg" alt="Thaleshwari J">
-        </div>
-      </div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:your-email@example.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+      </a>
+      <a href="https://github.com/your-github-username" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+      </a>
     </div>
-  </section>
+
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+</section>
+
 
   <!-- About Section -->
   <section id="about">
-  <h2>About Me</h2>
-  <p>
-    High-achieving <span class="highlight">Computer Science Engineering</span> student with hands-on expertise in <span class="highlight">Java</span> and <span class="highlight">Full Stack Web Development (MERN)</span>. Recognized for consultancy projects and top performance in NPTEL Java. Dedicated, adaptable, and focused on building <span class="highlight">scalable applications</span>.
-  </p>
+  <div class="about-container">
+    <!-- Left side: Image -->
+    <div class="about-left">
+      <img src="c:/Users/DELL/Downloads/J.Thaleshwari.jpeg" alt="Thaleshwari J">
+    </div>
+
+    <!-- Right side: Text -->
+    <div class="about-right">
+      <h2>About Me</h2>
+      <p>
+        I’m <span class="highlight">Thaleshwari J</span>, a passionate <span class="highlight">Computer Science Engineering</span> student who loves creating innovative web solutions using <span class="highlight">MERN Stack</span> and <span class="highlight">Java</span>.  
+      </p>
+      <p>
+        My journey in tech began with curiosity about how modern applications work — and today, I focus on designing <span class="highlight">responsive</span>, <span class="highlight">user-friendly</span>, and <span class="highlight">scalable</span> web experiences.  
+      </p>
+      <p>
+        I’ve successfully contributed to consultancy projects and achieved top performance in the <span class="highlight">NPTEL Programming in Java</span> course. I’m continuously learning new technologies to grow as a <span class="highlight">Full Stack Developer</span> and contribute to impactful digital products.
+      </p>
+      <a href="#projects" class="about-btn">View My Projects</a>
+    </div>
+  </div>
 </section>
+
 
 
   <!-- Skills Section -->
@@ -232,6 +258,20 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  var typed = new Typed(".typing", {
+    strings: [
+      "Full Stack Developer 💻",
+      "MERN Stack Enthusiast 🌐",
+      "Tech Explorer 🚀",
+      "Creative Problem Solver 💡"
+    ],
+    typeSpeed: 80,
+    backSpeed: 50,
+    backDelay: 1500,
+    loop: true
+  });
+</script>
   
 <script type="text/javascript">
    emailjs.init("uAiF7pHQzgO8wOQsf"); // Replace with your EmailJS public key
