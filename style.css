@@ -12,17 +12,17 @@ body {
   background: #f5f5f5;
   color: #333;
 }
-
-/* Navigation */
+/* 🌐 Navigation */
 header {
   width: 100%;
-  background: rgba(17, 17, 17, 0.95);
+  background: rgba(50, 50, 50, 0.95);
   color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav {
@@ -33,10 +33,29 @@ nav {
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ff4d5a;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #8beeb1;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
+
+/* subtle glowing hover effect */
+.logo:hover {
+  color: #aaffcc;
+  text-shadow: 0 0 8px rgba(139, 238, 177, 0.7),
+               0 0 15px rgba(139, 238, 177, 0.4);
+  transform: scale(1.05);
+}
+
+
+.logo:hover::after {
+  width: 100%;
+}
+
 
 .nav-links {
   list-style: none;
@@ -51,8 +70,8 @@ nav {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-links a::after {
@@ -66,11 +85,15 @@ nav {
   transition: 0.3s;
 }
 
+.nav-links a:hover {
+  color: #8beeb1;
+}
+
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* Burger menu for mobile */
+/* 🍔 Burger Menu (Mobile) */
 .burger {
   display: none;
   cursor: pointer;
@@ -84,30 +107,92 @@ nav {
   background: #fff;
   border-radius: 3px;
 }
+
 /* 🌟 Hero Section */
 #hero {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #bbbbbb, #b2b2b2);
-  color: #222;
   text-align: center;
+  color: #222;
   padding: 2rem;
+  background: linear-gradient(270deg, #e3fdfd, #ffe6fa, #e3fdfd);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero-content {
   max-width: 700px;
 }
 
+/* ✨ Animated Entrance */
+.hero-content h2,
+.hero-content h3,
+.hero-content p,
+.social-links,
+.btn {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.hero-content h2 { animation-delay: 0.2s; }
+.hero-content h3 { animation-delay: 0.4s; }
+.hero-content p { animation-delay: 0.6s; }
+.social-links { animation-delay: 0.8s; }
+.btn { animation-delay: 1s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-content h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero-content span {
   color: #0077b6;
   font-weight: bold;
+  position: relative;
+}
+
+.hero-content span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #0077b6;
+  bottom: -5px;
+  left: 0;
+  border-radius: 3px;
+  animation: underline 2s infinite alternate;
+}
+
+@keyframes underline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.hero-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  background: rgba(0, 119, 182, 0.1);
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  color: #0077b6;
 }
 
 .hero-content p {
@@ -116,6 +201,7 @@ nav {
   line-height: 1.6;
 }
 
+/* 🌐 Social Links */
 .social-links {
   display: flex;
   justify-content: center;
@@ -126,28 +212,74 @@ nav {
 .social-links img {
   width: 35px;
   height: 35px;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
 .social-links img:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(0, 119, 182, 0.6));
 }
 
+/* 🔘 Buttons */
 .btn {
-  background-color: #0077b6;
+  background: linear-gradient(135deg, #0077b6, #00a8e8);
   color: #fff;
   padding: 0.8rem 1.8rem;
   border-radius: 30px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.3);
 }
 
 .btn:hover {
-  background-color: #005f8c;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 119, 182, 0.4);
+  background: linear-gradient(135deg, #006498, #009dd9);
 }
 
-/* Section styling */
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 8%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .social-links img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* 🧭 Section Styling (for consistency with others) */
 section {
   padding: 8rem 5%;
 }
@@ -160,7 +292,7 @@ section h2 {
   position: relative;
 }
 
-section h2::after {
+/* section h2::after {
   content: '';
   width: 60px;
   height: 4px;
@@ -168,7 +300,7 @@ section h2::after {
   display: block;
   margin: 0.5rem auto 0;
   border-radius: 2px;
-}
+} */
 
 /* About Section */
 /* 🌿 About Section */
@@ -176,6 +308,7 @@ section h2::after {
   padding: 6rem 5%;
   background: #f9f9f9;
   color: #333;
+  margin:5%;
 }
 
 /* Layout */
@@ -198,9 +331,9 @@ section h2::after {
 
 .about-left img {
   width: 280px;
-  height: 280px;
+  height: 300px;
   border-radius: 50%;
-  object-fit: cover;
+  
   border: 5px solid #ffb84d;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -289,10 +422,11 @@ section h2::after {
 #skills {
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(171, 171, 171, 0.3));
   color: #fff;
-  padding: 80px 40px;
+  padding: 150px 40px;
   text-align: center;
   font-family: "Poppins", sans-serif;
   position: relative;
+  
 }
 
 /* Subtle glowing overlay */
@@ -480,7 +614,7 @@ section h2::after {
 
 /* Projects Section */
 #projects {
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
   background-color: #f5f7fa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -563,8 +697,8 @@ section h2::after {
 
 /* Education Section */
 #education {
-  padding: 4rem 2rem;
-  background-color: #ffffff;
+  padding: 8rem 2rem;
+  background-color: #e7e7e7;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
